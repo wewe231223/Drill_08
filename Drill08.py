@@ -32,7 +32,7 @@ class Boy:
 
 
 
-class SmallBall:
+class Ball:
 
     def __init__(self):
 
@@ -92,7 +92,7 @@ def Reset_World():
 
 
     team = [Boy() for i in range(10)]
-    balls = [SmallBall() for i in range(20)]
+    balls = [Ball() for i in range(20)]
     grass = Grass()
 
     world.append(grass)
