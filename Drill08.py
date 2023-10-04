@@ -32,10 +32,29 @@ class Boy:
 
 
 
+class SmallBall:
+
+    def __init__(self):
+        self.image = load_image('ball21x21.png')
+        self.x, self.y = random.randint(100, 700), 599
+        self.velocity = -10
+    def update(self):
+
+        if self.isGrounded():
+            self.y = 50 + self.image.h // 2
+            self.velocity = 0
+
+        self.y += self.velocity
 
 
 
+    def draw(self):
+        self.image.draw(self.x,self.y)
 
+    def isGrounded(self):
+        if self.y < 60 + self.image.h // 2:
+            return True
+        return False
 
 
 
@@ -59,14 +78,19 @@ def Reset_World():
     global grass
     global team
     global world
+    global balls
+
 
     world = []
 
 
     team = [Boy() for i in range(10)]
+    balls = [SmallBall() for i in range(20)]
     grass = Grass()
+
     world.append(grass)
     world += team
+    world += balls
 
 def Update_World():
     for o in world:
