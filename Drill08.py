@@ -35,9 +35,16 @@ class Boy:
 class SmallBall:
 
     def __init__(self):
-        self.image = load_image('ball21x21.png')
+
+        if random.randint(1,2) == 1:
+            self.image = load_image('ball21x21.png')
+        else :
+            self.image = load_image('ball41x41.png')
+
+
+
         self.x, self.y = random.randint(100, 700), 599
-        self.velocity = -10
+        self.velocity = random.randint(-20,-5)
     def update(self):
 
         if self.isGrounded():
