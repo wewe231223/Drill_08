@@ -60,22 +60,23 @@ def Reset_World():
     global team
     global world
 
-    
+    world = []
+
 
     team = [Boy() for i in range(10)]
     grass = Grass()
+    world.append(grass)
+    world += team
 
 def Update_World():
-    grass.update()
-    for boy in team:
-        boy.update()
+    for o in world:
+        o.update()
     pass
 
 def Render_World():
     clear_canvas()
-    grass.draw()
-    for boy in team:
-        boy.draw()
+    for o in world:
+        o.draw()
     update_canvas()
 
 
