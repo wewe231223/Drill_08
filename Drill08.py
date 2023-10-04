@@ -1,6 +1,9 @@
 from pico2d import *
 import random
 
+
+#Drill08 제출 2020182009 김승범
+
 # Game object class here
 
 class Grass:
